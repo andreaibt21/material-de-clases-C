@@ -1,0 +1,9 @@
+23:10:32 **** Incremental Build of configuration Build (GNU) for project clase 4 biblioteca ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Users/andre/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin/server;C:/Users/andre/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Users\andre\AppData\Local\Microsoft\WindowsApps;;C:\Users\andre\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\andre\eclipse\cpp-2021-03\eclipse;]
+
+23:10:32 Build Failed. 1 errors, 0 warnings. (took 49ms)
+

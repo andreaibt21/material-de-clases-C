@@ -1,0 +1,7 @@
+23:10:31 **** Rebuild of configuration Debug for project clase 12 - relaciones estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase 12 - relaciones estructuras.o" "..\\src\\clase 12 - relaciones estructuras.c" 
+gcc -o "clase 12 - relaciones estructuras.exe" "src\\clase 12 - relaciones estructuras.o" 
+
+23:10:31 Build Finished. 0 errors, 0 warnings. (took 269ms)
+

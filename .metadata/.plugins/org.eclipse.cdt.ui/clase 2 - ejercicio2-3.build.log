@@ -1,0 +1,14 @@
+23:10:31 **** Incremental Build of configuration Debug for project clase 2 - ejercicio2-3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase 2 - ejercicio2-3.o" "..\\src\\clase 2 - ejercicio2-3.c" 
+..\src\clase 2 - ejercicio2-3.c: In function 'main':
+..\src\clase 2 - ejercicio2-3.c:81:2: error: expected ';' before 'printf'
+  printf("Desea continuar? 's' si, 'n' no");
+  ^~~~~~
+..\src\clase 2 - ejercicio2-3.c:132:3: error: 'preciocon25' undeclared (first use in this function)
+   preciocon25 = viajeTotal + (viajeTotal * 25 ) / 100;
+   ^~~~~~~~~~~
+..\src\clase 2 - ejercicio2-3.c:132:3: note: each undeclared identifier is reported only once for each function it appears in
+
+23:10:31 Build Failed. 2 errors, 0 warnings. (took 87ms)
+
