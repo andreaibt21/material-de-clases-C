@@ -12,6 +12,21 @@
 #include <stdlib.h>
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+
+
+
+		int i;
+		for (i = 0; i < 11; ++i) {
+			if(!(i%2))
+			{
+				printf("%d\n", i);
+			}
+
+		}
+
+
+
+
+
 	return EXIT_SUCCESS;
 }
