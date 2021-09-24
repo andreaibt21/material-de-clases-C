@@ -33,11 +33,11 @@ int mostrarSiCargoBien(datosPersonales array[], int tamano);
 int buscarLibre(datosPersonales array[], int tamano);
 int utn_getNumero(int *resultado, char *mensaje, char *mensajeError, int minimo, int maximo, int reintentos);
 int utn_getString(char auxiliar[], char *mensaje, char *mensajeError, int reintentos);
-int utn_getCharSexo(char *variableChar, char *mensaje, char *mensajeError, int reintentos);
+int utn_getSoN(char *variableChar, char *mensaje, char *mensajeError, int reintentos);
 //void utn_getChar(char *variableChar, char *mensaje, char *mensajeError,int minimo, int maximo, int reintentos);
 int mostrarMenu(int *respuesta);
-int mostrarUnEstudiante( datosPersonales unAlumno);
-int mostrarTodosLosEstudiantes(datosPersonales array[], int tamano);
+int mostrarUnEmpleados( datosPersonales unAlumno);
+int mostrarTodosLosEmpleados(datosPersonales array[], int tamano);
 int promediarNotas(float *promedio, int nota1, int nota2);
 int agregarAlumno( datosPersonales   array[], int tamanoDeArray, int *contadorDeLegajo );
 int modificarAlumno( datosPersonales   array[], int tamanoDeArray, int posicion);
@@ -73,7 +73,7 @@ int main(void) {
 
 		case 2: // MOSTRAR ALUMNOS
 
-			mostrarTodosLosEstudiantes(alumno, CANTIDADALUMNOS);
+			mostrarTodosLosEmpleados(alumno, CANTIDADALUMNOS);
 			break;
 
 		case 3: // BAJA / BORRAR ALUMNO
@@ -249,7 +249,7 @@ void utn_getChar(char *variableChar, char *mensaje, char *mensajeError,int minim
 
 */
 
-int utn_getCharSexo(char *variableChar, char *mensaje, char *mensajeError, int reintentos){
+int utn_getSoN(char *variableChar, char *mensaje, char *mensajeError, int reintentos){
 	int retorno = -1;
 	char bufferChar;
 	if(variableChar != NULL && mensaje != NULL && mensajeError != NULL && reintentos>=0)
@@ -278,18 +278,14 @@ int utn_getCharSexo(char *variableChar, char *mensaje, char *mensajeError, int r
 
 }
 
-
-
-//3-Listar     legajo;  * sexo; * edad; * nota1; * nota2; * promedio; * apellido[20]; * isEmpty;
-
-int mostrarUnEstudiante( datosPersonales unAlumno){
+int mostrarUnEmpleados( datosPersonales unAlumno){
 	printf("        %d      %s       %c         %d        %d     %.2f    \n", unAlumno.legajo, unAlumno.apellido, unAlumno.sexo, unAlumno.nota1, unAlumno.nota2, unAlumno.promedio);
 
 	return 0;
 
 }
 
-int mostrarTodosLosEstudiantes(datosPersonales array[], int tamano){
+int mostrarTodosLosEmpleados(datosPersonales array[], int tamano){
 	int retorno = -1;
 
 		if(array != NULL && array > 0){
@@ -299,7 +295,7 @@ int mostrarTodosLosEstudiantes(datosPersonales array[], int tamano){
 			for(int i = 0; i < tamano ; i++){
 				if(array[i].isEmpty == 0){
 					printf(" %d", i);
-				mostrarUnEstudiante( array[i]);
+				mostrarUnEmpleados( array[i]);
 				}
 			}
 			retorno = 0;
@@ -324,7 +320,6 @@ int promediarNotas(float *promedio, int nota1, int nota2){
 }
 
 
-//agregarAlumno( alumno, posicion )
 int agregarAlumno( datosPersonales   array[], int tamanoDeArray, int *contadorDeLegajo ){
 	int retorno = -1;
 	int posicion;
@@ -338,7 +333,7 @@ int agregarAlumno( datosPersonales   array[], int tamanoDeArray, int *contadorDe
 			printf("\n No hay espacio disponible para cargar alumnos");
 		}else{
 
-			if (  (utn_getCharSexo(&alumnoAuxiliar.sexo,"Ingrese el sexo -f -m\n", "Error, intente nuevamente",3) == 0) &&
+			if (  (utn_getSoN(&alumnoAuxiliar.sexo,"Ingrese el sexo -f -m\n", "Error, intente nuevamente",3) == 0) &&
 				  (utn_getNumero(&alumnoAuxiliar.edad,"Ingrese la edad\n", "Error, ingrese la edad. Entre 18 y 80\n", 18, 80,3) == 0) &&
 				  (utn_getNumero(&alumnoAuxiliar.nota1,"Ingrese la nota1\n", "Error, ingrese la nota1. Entre 1 y 10\n", 0, 10,3) == 0) &&
 				  (utn_getNumero(&alumnoAuxiliar.nota2,"Ingrese la nota2\n", "Error, ingrese la nota2. Entre 1 y 10\n", 0, 10,3) == 0) &&
@@ -367,7 +362,7 @@ int buscarLegajo(datosPersonales array[], int tamanoDeArray)
 	int legajoAuxiliar;
 	if(array!=NULL && tamanoDeArray>0)
 	{
-		mostrarTodosLosEstudiantes(array, tamanoDeArray);
+		mostrarTodosLosEmpleados(array, tamanoDeArray);
 		printf("Ingrese un legajo \n");
 		scanf("%d", &legajoAuxiliar);
 
@@ -393,18 +388,17 @@ int buscarLegajo(datosPersonales array[], int tamanoDeArray)
 
 
 
-//case 4
 int modificarAlumno( datosPersonales   array[], int tamanoDeArray, int posicion){
 	int retorno = -1;
 	int legajoAuxiliar;
-	mostrarTodosLosEstudiantes(array, tamanoDeArray);
+	mostrarTodosLosEmpleados(array, tamanoDeArray);
 	printf("Ingrese el legajo del estudiante a modificar");
 	fflush(stdin);
 	scanf("%d", &legajoAuxiliar);
 	for( int i = 0; i<tamanoDeArray ; i++ )
 	{
 		if(array[i].legajo == legajoAuxiliar ){
-			mostrarUnEstudiante(array[i]);
+			mostrarUnEmpleados(array[i]);
 		}
 
 	};
@@ -413,17 +407,12 @@ int modificarAlumno( datosPersonales   array[], int tamanoDeArray, int posicion)
 
 	return retorno;
 }
-/* imprimes la lista pides legajo, submenu que dato
- * quieres mod, elije la opcion y un switch y uno pides
- * el numeo apellido y se lo asignas con el que tenía
- * recibes el array, largo legajo
- */
 
 
 /*
 
 
-	utn_getCharSexo(&alumno[posicion].sexo,"Ingrese el sexo -f -m\n", "Error, intente nuevamente",3);
+utn_getCharSexo(&alumno[posicion].sexo,"Ingrese el sexo -f -m\n", "Error, intente nuevamente",3);
 	utn_getNumero(&alumno[posicion].edad,"Ingrese la edad\n", "Error, ingrese la edad. Entre 18 y 80\n", 18, 80,3);
 	utn_getNumero(&alumno[posicion].nota1,"Ingrese la nota1\n", "Error, ingrese la nota1. Entre 1 y 10\n", 0, 10,3);
 	utn_getNumero(&alumno[posicion].nota2,"Ingrese la nota2\n", "Error, ingrese la nota2. Entre 1 y 10\n", 0, 10,3);

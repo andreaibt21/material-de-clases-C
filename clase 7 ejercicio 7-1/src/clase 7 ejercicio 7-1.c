@@ -1,3 +1,4 @@
+
 /*
  Ejercicio 7-1:Pedirle al usuario su nombre y apellido (en variables separadas,
   una para el nombre y otra para el apellido). Ninguna de las dos variables se

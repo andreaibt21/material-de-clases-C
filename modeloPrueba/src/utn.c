@@ -4,11 +4,14 @@
  *  Created on: May 12, 2021
  *      Author: andre
  */
-#include <string.h>
-#include <ctype.h>
+
 #ifndef UTN_C_
 #define UTN_C_
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 
 //INICIALIZACION

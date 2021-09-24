@@ -12,6 +12,18 @@ mostrar el siguiente mensaje: 'Es muy pequeño para NO ser soltero.'
 int main(void) {
 
 
+	 char c;
+
+	    printf("Enter a character: ");
+	    scanf("%c", &c);
+
+	    if (isalpha(c) == 0){
+	         printf("%c is not an alphabet.", c);
+	    }else{
+	         printf("%c is an alphabet.", c);
+	    }
+	    return 0;
+
 
 	return EXIT_SUCCESS;
 }
